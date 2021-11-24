@@ -42,7 +42,7 @@ endif
 
 ifeq ($(CC),llvm)
   CC = clang++
-  CFLAGS += -fsycl
+  CFLAGS += -fsycl -fsycl-targets=amdgcn-amd-amdhsa -Xsycl-target-backend --offload-arch=$(OFFLOAD_ARCH)
   LDFLAGS += -lOpenCL
 endif
 
